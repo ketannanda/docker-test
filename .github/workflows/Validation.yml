@@ -1,0 +1,34 @@
+# GitHub Actions – PR Title Validation Workflow
+
+Create this file inside your repository:
+
+```text
+.github/workflows/pr-title-validation.yml
+```
+
+## Workflow Script
+
+```yaml
+name: PR Title Validation
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  validate-pr-title:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate Pull Request Title
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prTitle = context.payload.pull_request.title;
+
+            // Custom Regex Pattern
+            // Example valid titles:
+            // CPSC-123: Add login API
+            // CPSC-456: Fix database issue
+            const pattern
+```
