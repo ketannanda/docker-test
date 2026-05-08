@@ -11,5 +11,10 @@ public class HelloWorldController {
 	public String getMesssge() {
 		return "Hello_World - hii i am new here IF it is working then print welcome to my page";
 	}
+	
+	@GetMapping("/help")
+	public String getHelp() {
+		return "Hello_World - hii i am new here IF it is working then print welcome to my page";
+	}
 
 }
